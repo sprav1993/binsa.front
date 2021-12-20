@@ -1,0 +1,60 @@
+<div class="container">  
+    <mat-toolbar>
+      <span>Crear Cliente</span>
+    </mat-toolbar>
+    <mat-card style="margin-top: 10px;">
+  <form [formGroup]="form"(ngSubmit)="agregarCliente()">
+
+      <mat-grid-list cols="4" rowHeight="70px">
+          <!-- <mat-grid-tile [colspan]="1" [rowspan]="1"> 
+              <mat-form-field clas="ancho">
+              <mat-label>ID</mat-label>
+              <input matInput autocomplete="off" formControlName="id">
+            </mat-form-field>
+           </mat-grid-tile> -->
+          <mat-grid-tile [colspan]="3" [rowspan]="5" >
+             <img src="./assets/img/usuario.png" width="250" height="250">
+             </mat-grid-tile> 
+          <mat-grid-tile [colspan]="1" [rowspan]="1" >  
+             <mat-form-field clas="ancho">
+              <mat-label>Nombre</mat-label>
+              <input matInput autocomplete="off" formControlName="nombre">
+            </mat-form-field>
+           </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1" >   
+              <mat-form-field clas="ancho">
+              <mat-label>Domicilio</mat-label>
+              <input matInput autocomplete="off" formControlName="domicilio">
+            </mat-form-field> 
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1" >   
+            <mat-form-field clas="ancho">
+            <mat-label>Codigo Postal</mat-label>
+            <input matInput autocomplete="off" formControlName="codigoPostal">
+          </mat-form-field> 
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1" >   
+            <mat-form-field clas="ancho">
+            <mat-label>Población</mat-label>
+            <input matInput autocomplete="off" formControlName="poblacion">
+          </mat-form-field> 
+        </mat-grid-tile>
+          <!-- <mat-grid-tile [colspan]="1" [rowspan]="1" > 
+              <mat-form-field  clas="ancho">
+              <mat-label>Sexo</mat-label>
+              <mat-select formControlName="sexo">
+                <mat-option *ngFor="let item of sexo" [value]="item">
+                  {{item}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field> 
+          </mat-grid-tile> -->
+          <mat-grid-tile [colspan]="1" [rowspan]="1" >
+              <button mat-raised-button style="margin-right: 20px;">Volver</button>
+  
+              <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary" >Aceptar</button>
+          </mat-grid-tile>
+      </mat-grid-list>
+  </form>
+  </mat-card>
+  </div>
