@@ -7,7 +7,10 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 import {ClientesComponent} from './clientes/clientes.component';
-import{ CrearClienteComponent }from './clientes/crear-cliente/crear-cliente.component'
+import{ CrearClienteComponent }from './clientes/crear-cliente/crear-cliente.component';
+import {ContactoComponent} from './contacto/contacto.component';
+
+import{ CrearContactoComponent }from './contacto/crear-contacto/crear-contacto.component'
 
 const routes: Routes = [
   {
@@ -15,9 +18,12 @@ const routes: Routes = [
       { path:'',component:InicioComponent },
       { path:'usuarios',component:UsuariosComponent },
       { path:'reportes',component:ReportesComponent } ,
-      {path:'crear-usuario',component:CrearUsuarioComponent}, 
+      {path:'crear-usuario',component:CrearUsuarioComponent},
       {path:'clientes',component:ClientesComponent},
-      {path:'crear-cliente',component:CrearClienteComponent}]
+      {path:'crear-cliente',component:CrearClienteComponent},
+      {path:'contacto',component:ContactoComponent},
+      {path:'crear-contacto',component:CrearContactoComponent}]
+
   }
 ];
 

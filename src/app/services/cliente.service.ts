@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Cliente } from '../interfaces/cliente';
+import { Contacto } from '../interfaces/contacto';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +43,6 @@ export class ClienteService {
     //return this.http.get<Cliente[]>(this.myApiURl)
   // return this.http.post<Cliente[]>((this.myAppUrl+this.myApiURl),cliente)
   return this.http.post<Cliente>((this.myAppUrl+this.myApiURl),user)
-
  }
   // agregar cliente(cliente:Cliente){
   //   this.listUsuarios.unshift(usuario);
@@ -57,11 +58,14 @@ export class ClienteService {
     this.rutaApi=`${this.rutaApi}/${id}`;
     console.log("rutaApiii",this.rutaApi);
     return this.http.delete(this.rutaApi);
-    
   }
 
-  
+  actualizarCliente(user:Cliente):Observable<Cliente>{
+    debugger;
+  return this.http.post<Cliente>((this.myAppUrl+this.myApiURl),user)
+ }
 
- 
+
+
 
 }

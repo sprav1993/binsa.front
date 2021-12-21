@@ -13,8 +13,8 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class CrearClienteComponent implements OnInit {
 
   sexo:any[]=['Masculino','Femenino'];
-  form:FormGroup;  
-  constructor(private fb:FormBuilder, 
+  form:FormGroup;
+  constructor(private fb:FormBuilder,
     private _clienteService:ClienteService,
     private router:Router,
     private _snackBar:MatSnackBar,
@@ -34,11 +34,11 @@ export class CrearClienteComponent implements OnInit {
   }
   agregarCliente(){
    console.log(this.form);
-   
+
    const user:Cliente={
      id:this.form.value.id,
      nombre:this.form.value.nombre,
-     domicilio:this.form.value.domicilio, 
+     domicilio:this.form.value.domicilio,
      codigoPostal:this.form.value.codigoPostal,
      poblacion:this.form.value.poblacion,
 
@@ -47,12 +47,12 @@ export class CrearClienteComponent implements OnInit {
    console.log(user);
    this._clienteService.agregarCliente(user).subscribe(s=>console.log("S de Suscr Add",s))
    this.router.navigate(['./dashboard/clientes'])
-   this._snackBar.open('El usuario fue agregado con éxito','',{
+   this._snackBar.open('El cliente fue agregado con éxito','',{
     duration:20000,
     horizontalPosition:'center',
     verticalPosition:'bottom',
 
   })
   }
- 
+
 }

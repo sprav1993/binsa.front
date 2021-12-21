@@ -1,0 +1,71 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Contacto</span>
+    <div class="example-spacer"></div>
+  <button mat-raised-button color="primary" routerLink="/dashboard/crear-contacto">NUEVO</button>
+  </mat-toolbar>
+
+<div *ngIf="listContactos.length>0" >
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id_contactoCli" style="width: 5px;">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 5px;"> ID Contacto </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_contactoCli}} </td>
+      </ng-container>
+      <ng-container matColumnDef="id_Cliente" style="width: 5px;">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 5px;"> ID Cliente </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_Cliente}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="domicilio">
+        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="poblacion">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+          <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element;" style="text-align: right;">
+            <a class="pointer" style="color:#1878b0" matTooltip="Ver Cliente">
+              <mat-icon>search</mat-icon>
+            </a>
+            <a class="pointer" (click)="popUpActualizarContacto(element.id_Cliente)"style="color:#1f516f" matTooltip="Editar Contacto">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a class="pointer" (click)="eliminarContacto(element)" style="color:#e15639" matTooltip="Eliminar Contacto">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>
+
+<h2 *ngIf="listContactos.length==0"> No hay usuarios para mostrar</h2>
+
+
+</div>

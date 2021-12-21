@@ -12,6 +12,8 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
 import { ClientesComponent } from './clientes/clientes.component';
 import { CrearClienteComponent } from './clientes/crear-cliente/crear-cliente.component';
 import { ClientePopUpComponent } from './clientes/cliente-pop-up/cliente-pop-up.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { CrearContactoComponent } from './contacto/crear-contacto/crear-contacto.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ClientePopUpComponent } from './clientes/cliente-pop-up/cliente-pop-up.
     CrearUsuarioComponent,
     ClientesComponent,
     CrearClienteComponent,
-    ClientePopUpComponent
+    ClientePopUpComponent,
+    ContactoComponent,
+    CrearContactoComponent
   ],
   imports: [
     CommonModule,
